@@ -23,6 +23,12 @@ int func_with_func(int a,int(*p)(int,int)){ // in this function with function as
 }
 
 
+// simmilarly we can also do type declaration for a function for example 
+
+typedef /* Function type */ int(*/* function name */intint_returnsint)/*parameters to put in a function*/(int,int); // this makes a type declaration
+
+int multiply(int a,int b){ return a*b;}
+intint_returnsint copy_mul = multiply;
 
 int main() {
 
@@ -34,5 +40,6 @@ int main() {
 
     printf("%d\n",func_with_func(10,f));
 
+    printf("%d\n",copy_mul(10,10));
     return 0;
 }
