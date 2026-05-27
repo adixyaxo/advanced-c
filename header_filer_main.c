@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "add_header.h"
 #include "sub_header.c"
+#include "multiply_dec.h"
 
 int main(int argc,char **argv) {
   printf("Hello World!\n");
@@ -13,6 +14,7 @@ int main(int argc,char **argv) {
 
   printf("%d\n",y);
 
+  int z = mul(10,10);
 
 
 
