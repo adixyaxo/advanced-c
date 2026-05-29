@@ -8,22 +8,22 @@ int func(int x,int y)
 }
 
 // Now this
-// int(*)(int,int) is the function type of this function 
+// int(*)(int,int) is the function type of this function
 // and you can declare a variable with it ,
 //it works strange but it works
 
 
 
 /*
-This comes in handy when you take or create a function with function as a parameter 
+This comes in handy when you take or create a function with function as a parameter
 */
-int func_with_func(int a,int(*p)(int,int)){ // in this function with function as a parameter we are taking inside a function p with int return type and two integer parameters for it 
+int func_with_func(int a,int(*p)(int,int)){ // in this function with function as a parameter we are taking inside a function p with int return type and two integer parameters for it
     int add = p(a,a) + a;
     return add ;
 }
 
 
-// simmilarly we can also do type declaration for a function for example 
+// simmilarly we can also do type declaration for a function for example
 
 typedef /* Function type */ int(*/* function name */intint_returnsint)/*parameters to put in a function*/(int,int); // this makes a type declaration
 
@@ -34,9 +34,17 @@ int main() {
 
     printf("%d\n",func(10,11));
 
-    int(*f)(int,int) = func; // here int(*)(int,int) this is the type and f is the variable normally we have int float etc as variable func is also a varibale with diffrent types depending on the type of varible inputs and outputs are in consideration 
+    int(*f)(int,int) = func; // here int(*)(int,int) this is the type and f is the variable normally we have int float etc as variable func is also a varibale with diffrent types depending on the type of varible inputs and outputs are in consideration
 
+    // we can also o
+    int(*fuh)(int,int);
+    fuh = func;
+
+    int *dec(int,int) ; // here this is a function decleration
+    int (*func_ptr)(int,int); // now this is a function pointer
     printf("%d\n",f(10,11));
+
+    printf("%d\n",fuh(10,11));
 
     printf("%d\n",func_with_func(10,f));
 
